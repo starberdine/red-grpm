@@ -8,24 +8,15 @@ function respond() {
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
       botRegex1 = /Hey Red/;
       botRegex2 = /broke free!/;
-  var i;
+  var i , j;
   for (i = 0, i < botRegex.length, i++) {
     if (request.text && botRegex[i].test(request.text)); 
     this.res.writeHead(200);
     postMessage(i);
     this.res.end();
-  } 
-  else if (request.text && botRegex1.test(request.text)){
-        this.res.writeHead(200);
-        postMessage(2);
-        this.res.end();
-  }
-  else if (request.text && botRegex2.test(request.text)){
-        this.res.writeHead(200);
-        postMessage(1);
-        this.res.end();
+    j = 1;
   }   
-    else {
+   if (j == 1 ) {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
