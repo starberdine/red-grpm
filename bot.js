@@ -5,12 +5,14 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^>A wild/;
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
       botRegex1 = /Hey Red/;
       botRegex2 = /broke free!/;
-  if(request.text && botRegex.test(request.text)) {
+  var i;
+  for (i = 0, i < botRegex.length, i++) {
+    if (request.text && botRegex[i].test(request.text)); 
     this.res.writeHead(200);
-    postMessage(1);
+    postMessage(i);
     this.res.end();
   } 
   else if (request.text && botRegex1.test(request.text)){
@@ -32,7 +34,7 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-if(message == 1){
+if(message == 1 || message == 3){
    botResponse = "!catch";
 }
 else if (message == 2){
