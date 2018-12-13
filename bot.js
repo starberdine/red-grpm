@@ -6,8 +6,6 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
-      botRegex1 = /Hey Red/;
-      botRegex2 = /broke free!/;
   var i , j;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)); 
@@ -41,7 +39,7 @@ else if (message == 2){
     "bot_id" : botID,
     "text" : botResponse
   };
-
+message = 0;
   console.log('sending ' + botResponse + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
