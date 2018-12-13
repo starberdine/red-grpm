@@ -9,7 +9,7 @@ function respond() {
       botRegex1 = /Hey Red/;
       botRegex2 = /broke free!/;
   var i , j;
-  for (i = 0, i < botRegex.length, i++) {
+  for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)); 
     this.res.writeHead(200);
     postMessage(i);
