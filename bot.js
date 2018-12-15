@@ -26,6 +26,10 @@ function postMessage(message) {
 if(message == 0 || message == 2){
    botResponse = "!catch";
 }
+else if (message == 1){
+	botResponse = "Handshake";
+}
+
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
