@@ -6,13 +6,12 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
-  var i , j;
+  var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)); 
     this.res.writeHead(200);
     postMessage(i);
     this.res.end();
-    j = 1;
   }   
    if (j == 1 ) {
     console.log("don't care");
@@ -25,9 +24,6 @@ function postMessage(message) {
   var botResponse, options, body, botReq;
 if(message == 1 || message == 3){
    botResponse = "!catch";
-}
-else if (message == 2){
-   botResponse = "PKMN Trainer Red wants to fight";
 }
   options = {
     hostname: 'api.groupme.com',
