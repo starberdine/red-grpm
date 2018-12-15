@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){; 
@@ -23,11 +23,16 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-if(message == 0 || message == 2){
+  var hunting = 1;
+if(message == 0 || message == 2 && hunting = 1){
    botResponse = "!catch";
 }
 else if (message == 1){
 	botResponse = "handshake";
+}
+else if (message == 3){
+	hunting = 0;
+	botResponse = "I'm done for now";
 }
 
   options = {
