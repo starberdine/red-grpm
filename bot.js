@@ -27,7 +27,7 @@ if(message == 0 || message == 2){
    botResponse = "!catch";
 }
 else if (message == 1){
-	botResponse = "Handshake";
+	botResponse = "handshake";
 }
 
   options = {
