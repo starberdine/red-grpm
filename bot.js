@@ -13,12 +13,12 @@ function respond() {
     postMessage(i);
     this.res.end();
 	}
- // }   
- //  if (j == 1 ) {
- //   console.log("don't care");
- //   this.res.writeHead(200);
- //   this.res.end();
- // }
+ }   
+  if (i == 4 ) {
+  console.log("don't care");
+   this.res.writeHead(200);
+   this.res.end();
+ }
 }
 
 function postMessage(message) {
