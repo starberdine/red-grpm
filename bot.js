@@ -2,10 +2,10 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-
+var hunting;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's filled that Pokedex, Red/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){; 
@@ -14,7 +14,7 @@ function respond() {
     this.res.end();
 	}
  }   
-  if (i == 4 ) {
+  if (i == 5) {
   console.log("don't care");
    this.res.writeHead(200);
    this.res.end();
@@ -23,7 +23,6 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-  var hunting = 1;
 if(message == 0 || message == 2){
   if(hunting == 1){ 
   botResponse = "!catch";
@@ -36,6 +35,11 @@ else if (message == 3){
 	hunting = 0;
 	botResponse = "I'm done for now";
 }
+else if (message == 4){
+	hunting = 1;
+	botResponse = "......"
+}
+
 
   options = {
     hostname: 'api.groupme.com',
