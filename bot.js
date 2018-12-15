@@ -23,7 +23,7 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-if(message == 1 || message == 3){
+if(message == 0 || message == 2){
    botResponse = "!catch";
 }
   options = {
