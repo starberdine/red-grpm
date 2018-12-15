@@ -8,10 +8,11 @@ function respond() {
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
-    if (request.text && botRegex[i].test(request.text)); 
+    if (request.text && botRegex[i].test(request.text)){; 
     this.res.writeHead(200);
     postMessage(i);
     this.res.end();
+	}
   }   
    if (j == 1 ) {
     console.log("don't care");
