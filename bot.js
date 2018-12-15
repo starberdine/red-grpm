@@ -24,8 +24,10 @@ function respond() {
 function postMessage(message) {
   var botResponse, options, body, botReq;
   var hunting = 1;
-if(message == 0 || message == 2 && hunting = 1){
-   botResponse = "!catch";
+if(message == 0 || message == 2){
+  if(hunting == 1){ 
+  botResponse = "!catch";
+  }
 }
 else if (message == 1){
 	botResponse = "handshake";
