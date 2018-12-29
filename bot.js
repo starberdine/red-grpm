@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 var hunting;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's filled that Pokedex, Red/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){; 
@@ -14,13 +14,17 @@ function respond() {
     this.res.end();
 	}
  }   
-  if (i == 5) {
+  if (i == 15) {
   console.log("don't care");
    this.res.writeHead(200);
    this.res.end();
  }
 }
+function train(){
+var pokemon = [name, lvl];
+var team = [];
 
+}
 function postMessage(message) {
   var botResponse, options, body, botReq;
 if(message == 0 || message == 2){
@@ -39,7 +43,9 @@ else if (message == 4){
 	hunting = 1;
 	botResponse = "......"
 }
-
+else if (message == 5){
+	train();
+}
 
   options = {
     hostname: 'api.groupme.com',
