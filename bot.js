@@ -8,7 +8,7 @@ function respond() {
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
-    if (request.text && botRegex[i].test(request.text)){; 
+    if (request.text && botRegex[i].test(request.text)){ 
     this.res.writeHead(200);
     postMessage(i);
     this.res.end();
@@ -20,12 +20,12 @@ function respond() {
    this.res.end();
  }
 }
-function train(){
-var pokemon = [name, lvl];
-var team = [];
+//function train(){
+//var pokemon = [name, lvl];
+//var team = [];
 //var getTeam = JSON.parse(this.req.chunks[0]);
+//}
 
-}
 function postMessage(message) {
   var botResponse, options, body, botReq;
 if(message == 0 || message == 2){
@@ -77,6 +77,5 @@ message = 0;
   });
   botReq.end(JSON.stringify(body));
 }
-
 
 exports.respond = respond;
