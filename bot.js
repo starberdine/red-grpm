@@ -43,13 +43,13 @@ else if (message == 3){
 }
 else if (message == 4){
 	hunting = 1;
-	botResponse = "......"
+	botResponse = "......";
 }
 else if (message == 5){
 botResponse = "!train status";	
 train();
+  }
 }
-
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
