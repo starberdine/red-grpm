@@ -46,8 +46,8 @@ else if (message == 4){
 }
 else if (message == 5){
 botResponse = "!train status";	
-  }
 }
+
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
