@@ -46,7 +46,7 @@ else if (message == 4){
 	botResponse = "......"
 }
 else if (message == 5){
-botReponse = "!train status";	
+botResponse = "!train status";	
 train();
 }
 
