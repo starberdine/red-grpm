@@ -23,6 +23,8 @@ function respond() {
 function train(){
 var pokemon = [name, lvl];
 var team = [];
+var getTeam = JSON.parse(this.req.chunks[0]);
+
 
 }
 function postMessage(message) {
@@ -44,7 +46,8 @@ else if (message == 4){
 	botResponse = "......"
 }
 else if (message == 5){
-	train();
+botReponse = "!train status";	
+train();
 }
 
   options = {
