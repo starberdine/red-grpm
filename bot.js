@@ -3,7 +3,7 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
-var pokemon = [name,level];
+//var pokemon = [name,level];
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/];
@@ -26,6 +26,7 @@ function respond() {
 //var team = [];
 //var getTeam = JSON.parse(this.req.chunks[0]);
 //}
+
 if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
 botResponse = "!battle bott";	
 }
