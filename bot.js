@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting;
+var hunting = 1;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/];
