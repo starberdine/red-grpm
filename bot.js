@@ -27,9 +27,9 @@ function respond() {
 //var getTeam = JSON.parse(this.req.chunks[0]);
 //}
 
-if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
-botResponse = "!battle bott";	
-}
+//if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
+//botResponse = "!battle bott";	
+//}
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
