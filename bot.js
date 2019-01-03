@@ -26,7 +26,7 @@ function respond() {
 //var team = [];
 //var getTeam = JSON.parse(this.req.chunks[0]);
 //}
-if (getHours == 0 || 6 || 12 || 18){
+if (getHours() == 0 || 6 || 12 || 18){
 botResponse = "!battle bott";	
 }
 
