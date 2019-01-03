@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 var hunting;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Let's go home, Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/loser/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -46,6 +46,9 @@ else if (message == 4){
 }
 else if (message == 5){
 botResponse = "!train status";	
+}
+else if (message == 6){
+botResponse = "Fight me, bitch";
 }
 
   options = {
