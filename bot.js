@@ -4,7 +4,7 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var hunting = 1;
 function sleep (time) {
-  return new Promise((resolve);
+  return new Promise((resolve)
   setTimeout(resolve, time));
 }
 //var pokemon = [name,level];
