@@ -3,8 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
+const sleep = (milliseconds) {
+  return new Promise(resolve setTimeout(resolve, milliseconds));
 }
 //var pokemon = [name,level];
 function respond() {
