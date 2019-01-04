@@ -4,8 +4,7 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var hunting = 1;
 function sleep (time) {
-  return new Promise((resolve)
-  setTimeout(resolve, time));
+  return new Promise((resolve) => setTimeout(resolve, time));
 }
 //var pokemon = [name,level];
 function respond() {
@@ -38,7 +37,7 @@ function postMessage(message) {
 if(message == 0 || message == 2){
   if(hunting == 1){ 
   botResponse = "!catch";
-  sleep(10000).then(() {
+  sleep(10000).then(() => {
 	  botResponse = "!catch';
   })
   }
