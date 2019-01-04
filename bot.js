@@ -38,7 +38,7 @@ if(message == 0 || message == 2){
   if(hunting == 1){ 
   botResponse = "!catch";
   sleep(10000).then(() => {
-	  
+	  botResponse = "!catch';
   })
   }
 }
