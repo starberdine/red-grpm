@@ -3,9 +3,9 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
+//function sleep (time) {
+//  return new Promise((resolve) => setTimeout(resolve, time));
+//}
 //var pokemon = [name,level];
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -37,7 +37,6 @@ function postMessage(message) {
 if(message == 0 || message == 2){
   if(hunting == 1){ 
   botResponse = "!catch";
-  sleep(10000);
   }
 }
 else if (message == 1){
