@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting;
+var hunting = 0;
 var waitinline = 0;
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
@@ -53,7 +53,7 @@ else if (message == 3){
 	hunting = 0;
 	botResponse = "I'm done for now";
 }
-else if (message == 4 ||){
+else if (message == 4){
 	hunting = 1;
 	botResponse = "......";
 }
@@ -68,8 +68,9 @@ else if (message == 7){
 	waitinline = 0;
 }
 else if (message == 8) {
-	botResponse = ".........";
 	hunting = 2;
+	botResponse = ".........";
+	
 }
   options = {
     hostname: 'api.groupme.com',
