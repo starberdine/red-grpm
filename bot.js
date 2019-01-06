@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting = 1;
+var hunting;
 var waitinline = 0;
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
@@ -10,7 +10,7 @@ var waitinline = 0;
 //var pokemon = [name,level];
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/caught/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/caught/,/To Mt. Silver, Red];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -53,7 +53,7 @@ else if (message == 3){
 	hunting = 0;
 	botResponse = "I'm done for now";
 }
-else if (message == 4){
+else if (message == 4 ||){
 	hunting = 1;
 	botResponse = "......";
 }
@@ -67,7 +67,10 @@ botResponse = "!battle bott";
 else if (message == 7){
 	waitinline = 0;
 }
-
+else if (message == 8) {
+	botResponse = ".........";
+	hunting = 2;
+}
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
