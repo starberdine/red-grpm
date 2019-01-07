@@ -2,15 +2,14 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting = 0;
-var waitinline = 0;
+var hunting = 1;
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
 //}
 //var pokemon = [name,level];
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/caught/,/To Mt. Silver, Red/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -35,9 +34,10 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
+  var waitinline;
 if(message == 0){
   if(hunting == 1){ 
-  botResponse = "!catch";
+  waitinline = 1;
   }
 }
 else if (message == 1){
@@ -65,7 +65,9 @@ botResponse = "PKMN Trainer Red wants to fight";
 botResponse = "!battle bott";
 }
 else if (message == 7){
-	waitinline = 0;
+	if(waitinline = 1){
+		botResponse = "!catch";
+	}
 }
 else if (message == 8) {
 	hunting = 2;
