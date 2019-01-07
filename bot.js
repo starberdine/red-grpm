@@ -36,8 +36,8 @@ if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
 		botResponse = "!battle bott";	
 		trained = 1;
 	}
+  }
 }
-
 function postMessage(message) {
   var botResponse, options, body, botReq;
 
