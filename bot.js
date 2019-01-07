@@ -44,7 +44,6 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	waitinline = waitinline + 1;
 	if (waitinline == 3){
 		botresponse = "!catch";
 	}
