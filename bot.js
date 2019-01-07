@@ -51,7 +51,7 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if(tossed == 1 && waitinline == 4){
+	if(tossed == 1 && waitinline >= 4){
 		botResponse = "!catch";
 	}
 }
