@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting = 1;
+var hunting = 0;
 var waitinline;
 var tossed = 0;
 //function sleep (time) {
@@ -26,13 +26,17 @@ function respond() {
    this.res.end();
  }
 }
-//function train(){
-//var team = [];
-//var getTeam = JSON.parse(this.req.chunks[0]);
-
-//if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
-//botResponse = "!battle bott";	
-//}
+function train(){
+	var trained;
+	if (getHours() == 1 || getHours() == 7 || getHours() == 13 || getHours() == 19){
+		trained = 0;
+	}
+if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
+	if(trained == 0){
+		botResponse = "!battle bott";	
+		trained = 1;
+	}
+}
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
@@ -46,7 +50,7 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if(tossed == 1 && waitinline == 3){
+	if(tossed == 1 && waitinline == 4){
 		botResponse = "!catch";
 	}
 }
@@ -80,6 +84,7 @@ else if (message == 8) {
 else if (message == 9) {
 	tossed = 0;
 	waitinline = 0;
+	train();
 }
 
   options = {
