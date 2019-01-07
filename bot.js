@@ -34,7 +34,8 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-  var waitinline, tossed;
+  var waitinline;
+  var tossed = 0;
 if(message == 0){
   if(hunting == 1){ 
   waitinline = 1;
