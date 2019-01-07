@@ -37,9 +37,9 @@ function respond() {
 function postMessage(message) {
   var botResponse, options, body, botReq;
 
-if(message == 0){
-  if(hunting == 1){ 
-  waitinline = 1;
+if (message == 0){
+      if(hunting == 1){ 
+         waitinline = 1;
   }
 }
 else if (message == 1){
@@ -66,8 +66,8 @@ botResponse = "PKMN Trainer Red wants to fight";
 botResponse = "!battle bott";
 }
 else if (message == 7){
-	
-	if(waitinline == 1 && tossed == 0){
+	waitinline = waitinline + 1;
+	if(waitinline == 2 && tossed == 0){
 		botResponse = "!catch";
 		tossed = tossed + 1;
 	}
