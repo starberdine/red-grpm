@@ -9,7 +9,7 @@ var hunting = 1;
 //var pokemon = [name,level];
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/];
+      botRegex = [/^>A wild/,/Hey Red/,/threw a pokeball/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -35,7 +35,7 @@ function respond() {
 function postMessage(message) {
   var botResponse, options, body, botReq;
   var waitinline;
-  var tossed = 0;
+  var tossed;
 if(message == 0){
   if(hunting == 1){ 
   waitinline = 1;
@@ -45,8 +45,7 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if (waitinline == 3){
-		botresponse = "!catch";
+	tossed = 1;
 	}
 }
 else if (message == 3){
@@ -66,7 +65,7 @@ botResponse = "!battle bott";
 }
 else if (message == 7){
 	if(waitinline = 1 && tossed == 0){
-		botResponse = "!catch";
+		//botResponse = "!catch";
 		tossed = 1;
 	}
 }
