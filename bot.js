@@ -3,6 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
+var waitinline;
+var tossed = 0;
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
 //}
@@ -34,8 +36,7 @@ function respond() {
 
 function postMessage(message) {
   var botResponse, options, body, botReq;
-  var waitinline;
-  var tossed;
+
 if(message == 0){
   if(hunting == 1){ 
   waitinline = 1;
@@ -64,9 +65,10 @@ botResponse = "PKMN Trainer Red wants to fight";
 botResponse = "!battle bott";
 }
 else if (message == 7){
+	
 	if(waitinline = 1 && tossed == 0){
-		//botResponse = "!catch";
-		tossed = 1;
+		botResponse = "!catch";
+		tossed = tossed + 1;
 	}
 }
 else if (message == 8) {
@@ -75,7 +77,8 @@ else if (message == 8) {
 }
 
 else if (message == 9) {
-	tossed = 0;
+	tossed = 0
+	waitinline = 0;
 }
 
   options = {
