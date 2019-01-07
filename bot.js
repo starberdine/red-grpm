@@ -5,6 +5,7 @@ var botID = process.env.BOT_ID;
 var hunting = 0;
 var waitinline;
 var tossed = 0;
+
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
 //}
@@ -28,10 +29,10 @@ function respond() {
 }
 function train(){
 	var trained;
-	if (getHours() == 1 || getHours() == 7 || getHours() == 13 || getHours() == 19){
+	if (getHours()%3 != 0){
 		trained = 0;
 	}
-if (getHours() == 0 || getHours() == 6 || getHours() == 12 || getHours() == 18){
+if (getHours()%3 == 0){
 	if(trained == 0){
 		botResponse = "!battle bott";	
 		trained = 1;
