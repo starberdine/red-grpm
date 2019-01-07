@@ -77,7 +77,7 @@ else if (message == 8) {
 }
 
 else if (message == 9) {
-	tossed = 0
+	tossed = 0;
 	waitinline = 0;
 }
 
