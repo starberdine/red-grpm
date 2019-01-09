@@ -11,6 +11,7 @@ var tossed = 0;
 //}
 //var pokemon = [name,level];
 function respond() {
+  
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/];
   var i;
@@ -28,11 +29,12 @@ function respond() {
  }
 }
 function train(){
+	var n = newDate();
 	var trained;
-	if (getHours()%3 != 0){
+	if (n.getHours()%3 != 0){
 		trained = 0;
 	}
-if (getHours()%3 == 0){
+if (n.getHours()%3 == 0){
 	if(trained == 0){
 		botResponse = "!battle bott";	
 		trained = 1;
