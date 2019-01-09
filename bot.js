@@ -3,8 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 0;
-var waitinline;
-var tossed = 0;
+
+
 
 //function sleep (time) {
 //  return new Promise((resolve) => setTimeout(resolve, time));
@@ -31,10 +31,10 @@ function respond() {
 function train(){
 	var n = newDate();
 	var trained;
-	if (n.getHours()%3 != 0){
+	if (n.getHours() % 3  != 0){
 		trained = 0;
 	}
-if (n.getHours()%3 == 0){
+if (n.getHours() % 3 == 0){
 	if(trained == 0){
 		botResponse = "!battle bott";	
 		trained = 1;
@@ -43,7 +43,8 @@ if (n.getHours()%3 == 0){
 }
 function postMessage(message) {
   var botResponse, options, body, botReq;
-
+  var tossed;
+  var waitinline;
 if (message == 0){
       if(hunting == 1){ 
          waitinline = 1;
@@ -53,7 +54,7 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if(tossed == 1 && waitinline >= 4){
+	if(tossed == 1 && waitinline >= 3){
 		botResponse = "!catch";
 	}
 }
