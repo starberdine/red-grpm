@@ -3,7 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
-
+var tossed;
+var waitinline = 0;
 
 
 //function sleep (time) {
@@ -43,8 +44,7 @@ if (n.getHours() % 3 == 0){
 }
 function postMessage(message) {
   var botResponse, options, body, botReq;
-  var tossed;
-  var waitinline;
+
 if (message == 0){
       if(hunting == 1){ 
          waitinline = 1;
