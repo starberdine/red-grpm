@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var hunting = 0;
+var hunting = 1;
 
 
 
@@ -67,7 +67,7 @@ else if (message == 4){
 	botResponse = "......";
 }
 else if (message == 5){
-botResponse = "!train status";	
+	train();	
 }
 else if (message == 6){
 botResponse = "PKMN Trainer Red wants to fight";
@@ -88,7 +88,6 @@ else if (message == 8) {
 else if (message == 9) {
 	tossed = 0;
 	waitinline = 0;
-	train();
 }
 else if (message == 10){
 	waitinline = 0;
