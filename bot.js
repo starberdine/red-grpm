@@ -71,8 +71,8 @@ else if (message == 5){
 	train();	
 }
 else if (message == 6){
-botResponse = "PKMN Trainer Red wants to fight";
-botResponse = "!battle bott";
+botResponse = "!battle bott  -PKMN Trainer Red wants to fight";
+
 }
 else if (message == 7){
 	waitinline = waitinline + 1;
