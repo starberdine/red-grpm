@@ -34,6 +34,7 @@ function train(){
 	var n = newDate();
 	if (n.getHours() % 3  != 0){
 		trained = 0;
+		botResponse = "Waiting at the Pokemon Center";
 	}
 if (n.getHours() % 3 == 0){
 	if(trained == 0){
@@ -54,7 +55,7 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if(tossed == 1 && waitinline >= 3){
+	if(tossed == 1 && waitinline >= 4){
 		botResponse = "!catch last ball, make it count!";
 		tossed = tossed + 1;
 	}
