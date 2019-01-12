@@ -3,7 +3,8 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var hunting = 1;
-var tossed;
+var tossed = 0;
+var trained;
 var waitinline = 0;
 
 
@@ -31,7 +32,6 @@ function respond() {
 }
 function train(){
 	var n = newDate();
-	var trained;
 	if (n.getHours() % 3  != 0){
 		trained = 0;
 	}
@@ -56,6 +56,8 @@ else if (message == 1){
 else if (message == 2){
 	if(tossed == 1 && waitinline >= 3){
 		botResponse = "!catch";
+		tossed = tossed + 1;
+		botResponse = "last ball, make it count!";
 	}
 }
 else if (message == 3){
