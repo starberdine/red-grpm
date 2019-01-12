@@ -15,7 +15,7 @@ var waitinline = 0;
 function respond() {
   
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Hi Red, Lets Train/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Time to Scrimmage/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
