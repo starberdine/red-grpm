@@ -55,9 +55,8 @@ else if (message == 1){
 }
 else if (message == 2){
 	if(tossed == 1 && waitinline >= 3){
-		botResponse = "!catch";
+		botResponse = "!catch last ball, make it count!"";
 		tossed = tossed + 1;
-		botResponse = "last ball, make it count!";
 	}
 }
 else if (message == 3){
