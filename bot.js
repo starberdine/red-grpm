@@ -6,6 +6,7 @@ var hunting = 1;
 var tossed = 0;
 var trained;
 var waitinline = 0;
+var waitone = 0;
 
 
 //function sleep (time) {
@@ -55,7 +56,8 @@ else if (message == 1){
 	botResponse = "handshake";
 }
 else if (message == 2){
-	if(tossed == 1 && waitinline >= 4){
+	waitone = waitone + 1;
+	if(tossed == 1 && waitinline >= 4 && waitone >= 2){
 		botResponse = "!catch last ball, make it count!";
 		tossed = tossed + 1;
 	}
@@ -90,10 +92,12 @@ else if (message == 8) {
 else if (message == 9) {
 	tossed = 0;
 	waitinline = 0;
+	waitone = 0;
 }
 else if (message == 10){
 	waitinline = 0;
 	tossed = 0;	
+	waitone = 0;
 }
 
   options = {
