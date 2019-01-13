@@ -99,7 +99,7 @@ else if (message == 10){
 	tossed = 0;	
 	waitone = 0;
 }
-else if (message == 10){
+else if (message == 11){
 	botResponse = "!team";
 }
 
