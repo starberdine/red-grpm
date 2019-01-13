@@ -16,7 +16,7 @@ var waitone = 0;
 function respond() {
   
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Time to Scrimmage/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Time to Scrimmage/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/,/Bill's PC/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -98,6 +98,9 @@ else if (message == 10){
 	waitinline = 0;
 	tossed = 0;	
 	waitone = 0;
+}
+else if (message == 10){
+	botResponse = "!team";
 }
 
   options = {
