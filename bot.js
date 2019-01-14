@@ -16,7 +16,7 @@ var waitone = 0;
 function respond() {
   
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Time to Scrimmage/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/,/Bill's PC/];
+      botRegex = [/^>A wild/,/Hey Red/,/broke free!/,/Lets go home,  Red/,/Let's fill that Pokedex, Red/,/Time to Scrimmage/,/Fight'em Red/,/!catch/,/To Mt. Silver, Red/,/caught/,/fled/,/Bill's PC/,/! catch/];
   var i;
   for (i = 0; i < botRegex.length; i++) {
     if (request.text && botRegex[i].test(request.text)){ 
@@ -77,7 +77,7 @@ else if (message == 6){
 botResponse = "!battle bott  -PKMN Trainer Red wants to fight";
 
 }
-else if (message == 7){
+else if (message == 7 || message == 12){
 	waitinline = waitinline + 1;
 	if(waitinline == 2 && tossed == 0){
 		botResponse = "!catch";
